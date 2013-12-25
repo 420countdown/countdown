@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Aaron Sullivan - Engineer - github.com/aaronik
 
 # THANKS
 
-    <name>
+    Errbody
 
 # TECHNOLOGY COLOPHON
 
