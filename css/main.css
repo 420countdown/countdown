@@ -1,28 +1,26 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
 }
 
 /* begin main styling for 420countdown */
 body {
   background: linear-gradient(
-      rgba(48, 52, 42, 0.8), 
-      rgba(48, 52, 42, 0.8)
+    rgba(48, 52, 42, 0.8), 
+    rgba(48, 52, 42, 0.8)
     ),
   url('../img/page.png');
-
-  font-size: 38px;
-  font-family: Oswald, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  font-weight: bold;
-  font-style: normal;
-  text-decoration: none;
-  overflow: hidden;
 }
 
 #main-navbar {
   background: #557920;
   background: linear-gradient(top, #5B8122 0, #78A92D 15%, #618924 50%, #415D19 50%, #557920 100%) no-repeat;
-  background: -webkit-linear-gradient(top, #5B8122 0, #78A92D 15%, #618924 50%, #415D19 50%, #557920 100%) no-repeat;
+  background: -webkit-linear-gradient(top,#5B8122 0, #78A92D 15%, #618924 50%, #415D19 50%, #557920 100%) no-repeat;
   background: -moz-linear-gradient(top, #5B8122 0, #78A92D 15%, #618924 50%, #415D19 50%, #557920 100%) no-repeat;
   background: -o-linear-gradient(top, #5B8122 0, #78A92D 15%, #618924 50%, #415D19 50%, #557920 100%) no-repeat;
   background: -ms-linear-gradient(top, #5B8122 0, #78A92D 15%, #618924 50%, #415D19 50%, #557920 100%) no-repeat;
@@ -30,6 +28,7 @@ body {
   -svg-background: linear-gradient(top, #5B8122 0, #78A92D 15%, #618924 50%, #415D19 50%, #557920 100%) no-repeat;
   border-bottom:1px solid #B0DA72;
 }
+
 #inner-main-navbar ul {
   text-align: center;
   margin-left: auto;
@@ -39,12 +38,56 @@ body {
 
 #inner-main-navbar ul li {
   display: inline-block;
-  height: 100%;
   vertical-align: middle;
+  padding: 1% 3% 1% 3%;
+  border-right: 2px solid #B0DA72;
+  margin-left: -11px;
+  color: #B0DA72;
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  font-size: 24px;
 }
 
-#header-bar-image {
+#inner-main-navbar ul li:hover{
+  color: black;
+  background: #97CE46;
+  background: linear-gradient(top, #9CD04E 0, #B2DB76 15%, #A0D256 50%, #8EC936 50%, #86BD32 50%, #8EC936 71%, #97CE46 100%) no-repeat;
+  background: -webkit-linear-gradient(top, #9CD04E 0, #B2DB76 15%, #A0D256 50%, #8EC936 50%, #86BD32 50%, #8EC936 71%, #97CE46 100%) no-repeat;
+  background: -moz-linear-gradient(top, #9CD04E 0, #B2DB76 15%, #A0D256 50%, #8EC936 50%, #86BD32 50%, #8EC936 71%, #97CE46 100%) no-repeat;
+  background: -o-linear-gradient(top, #9CD04E 0, #B2DB76 15%, #A0D256 50%, #8EC936 50%, #86BD32 50%, #8EC936 71%, #97CE46 100%) no-repeat;
+  background: -ms-linear-gradient(top, #9CD04E 0, #B2DB76 15%, #A0D256 50%, #8EC936 50%, #86BD32 50%, #8EC936 71%, #97CE46 100%) no-repeat;
+  background: linear-gradient(top, #9CD04E 0, #B2DB76 15%, #A0D256 50%, #8EC936 50%, #86BD32 50%, #8EC936 71%, #97CE46 100%) no-repeat;
+  -svg-background: linear-gradient(top, #9CD04E 0, #B2DB76 15%, #A0D256 50%, #8EC936 50%, #86BD32 50%, #8EC936 71%, #97CE46 100%) no-repeat;
+}
 
+#rightmost-nav-link {
+  border-right: none !important;
+}
+
+#inner-main-navbar ul li a {
+  text-decoration: none;
+}
+
+#countdown-wrapper {
+  color: white;
+  text-align: center;
+  text-shadow: black 5px 5px 8px;  /* color, vert, hor, blur */
+  font-size: 38px;
+  font-family: Oswald, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.main-content-row {
+
+}
+
+.main-content-el {
+  display: inline-block;
+  width: 30%;
+  margin: 10px;
 }
 
 #footer-separator {
