@@ -19,6 +19,7 @@ body {
 }
 
 #main-navbar {
+	height: 40px; /* remove this when adding links to navbar */
   background: #557920;
   background: linear-gradient(top, #5B8122 0, #78A92D 15%, #618924 50%, #415D19 50%, #557920 100%) no-repeat;
   background: -webkit-linear-gradient(top,#5B8122 0, #78A92D 15%, #618924 50%, #415D19 50%, #557920 100%) no-repeat;
@@ -72,7 +73,7 @@ body {
   color: white;
   text-align: center;
   text-shadow: black 5px 5px 8px;  /* color, vert, hor, blur */
-  font-size: 64px;
+  font-size: 164px;
   font-family: Oswald, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: bold;
   font-style: normal;
@@ -85,17 +86,35 @@ body {
   display: inline-block;
   width: 30%;
   margin: 10px;
+  height: 100%;
 }
 
 .rando-image {
-  height: 300px;
+  max-height: 33%;
+  max-width: 100%;
   text-align: center;
   margin: 10%;
+  
+}
+
+#random-weed-image-1 {
+	float: right;
+}
+
+#random-weed-image-2 {
+	float: left;
+}
+
+#amazon-div {
+	text-align: center;
+	line-height: 100%;
+	position: relative;
+	top: 0;
+	vertical-align: top;
 }
 
 #amazon-script {
-	text-align: center;
-	line-height: 100%;
+
 }
 
 #footer-separator {
