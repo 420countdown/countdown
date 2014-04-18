@@ -8,36 +8,37 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		this.imageChangeDuration = 2500;
 	};
 
-	RandomImagePuller.prototype.getLocation = function(){
+	RandomImagePuller.prototype._getLocation = function(){
 		return 'http://420-weed.jpg.to/r?' + Math.random();
 	};
 
-	RandomImagePuller.prototype.modifyImage = function($el, loc){
+	RandomImagePuller.prototype._modifyImage = function($el, loc){
 		$el.attr('src', loc);
 	};
 
-	RandomImagePuller.prototype.initialPopulation = function(){
-		var imgLoc1 = this.getLocation();
-		var imgLoc2 = this.getLocation();
+	RandomImagePuller.prototype.assignImage = function($el) {
+		var that = this;
+		var src = this._getLocation();
+		var img = new Image();
+		img.onload = function(){ that._modifyImage($el, src) };
+		img.onerror = function(){ that.assignImage($el) };
+		img.src = src;
+	};
 
-		this.modifyImage(this.$el1, imgLoc1);
-		this.modifyImage(this.$el2, imgLoc2);
+	RandomImagePuller.prototype.initialPopulation = function(){
+		this.assignImage(this.$el1)
+		this.assignImage(this.$el2)
 	};
 
 	RandomImagePuller.prototype.step = function(){
-		var that = this;
-		var elArray = [that.$el1, that.$el2];
-
-		var imgLoc = that.getLocation();
+		var elArray = [this.$el1, this.$el2];
 		var $el = elArray[Math.round(Math.random())]
-		this.modifyImage($el, imgLoc);
+		this.assignImage($el);
 	};
 
 	RandomImagePuller.prototype.initialize = function(){
 		var that = this;
-
 		this.initialPopulation();
-
 		window.imageInterval = setInterval(that.step.bind(that), that.imageChangeDuration);
 	};
 })(Countdown)
