@@ -9,9 +9,27 @@ var Countdown = this.Countdown = (this.Countdown || {});
 	};
 
 	CountdownTimer.prototype.getRemainingSeconds = function() {
-		this.seconds = ((new Date(2050, 1, 1, 4, 20, 00).valueOf() / 1000) - Math.floor(new Date().valueOf() / 1000)) % (60 * 60 * 12);
+		// this.seconds = ((new Date(2050, 1, 1, 4, 20, 00).valueOf() / 1000) - Math.floor(new Date().valueOf() / 1000)) % (60 * 60 * 12);
 
-		return this.seconds;
+		// Compare two, choose whichever is closer.
+		var now = new Date();
+		var morningTwenty = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 4, 20, 00);
+		var afternoonTwenty = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 16, 20, 00);
+		var morrowTwenty = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 4, 20, 00);
+
+		// determine which is next
+		var first = morningTwenty - now;
+		var second = afternoonTwenty - now;
+		var third = morrowTwenty - now;
+
+		// return the first time that is in the future
+		var remainingTimes = [first, second, third];
+		for (var i = 0; i < remainingTimes.length; i++) {
+			remainingSeconds = remainingTimes[i]
+			if(remainingSeconds > 0) {
+				return Math.round(remainingSeconds / 1000)
+			}
+		}
 	};
 
 	CountdownTimer.prototype.translateTime = function(givenSeconds) {
