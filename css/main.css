@@ -97,6 +97,11 @@ body {
   
 }
 
+.rando-image {
+  border: 10px solid black;
+  border-radius: 10px;
+}
+
 #random-weed-image-1 {
 	float: right;
 }
