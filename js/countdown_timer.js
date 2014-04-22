@@ -54,6 +54,7 @@ var Countdown = this.Countdown = (this.Countdown || {});
 
 	CountdownTimer.prototype.replaceTime = function (newTime) {
 		this.$element.html(newTime);
+		this.$element.lettering();
 	};
 
 	CountdownTimer.prototype.step = function(){
@@ -61,6 +62,10 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		var timeString = this.translateTime(remainingSeconds);
 		this.replaceTime(timeString);
 	};
+
+	CountdownTimer.prototype.stop = function() {
+		clearInterval(window.countdownTimer);
+	}
 
 	CountdownTimer.prototype.initialize = function(){
 		var that = this;
