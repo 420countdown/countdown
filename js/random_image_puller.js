@@ -4,6 +4,7 @@ var Countdown = this.Countdown = (this.Countdown || {});
 	var RandomImagePuller = global.RandomImagePuller = function ($el1, $el2) {
 		this.$el1 = $el1;
 		this.$el2 = $el2;
+		this.fadeDuration = 400;
 		// this.initialize();
 		this.imageChangeDuration = 2500;
 	};
@@ -13,7 +14,11 @@ var Countdown = this.Countdown = (this.Countdown || {});
 	};
 
 	RandomImagePuller.prototype._modifyImage = function($el, loc){
-		$el.attr('src', loc);
+		var that = this;
+		$el.fadeOut(that.fadeDuration, function() {
+			$el.attr('src', loc);
+			$el.fadeIn();
+		});
 	};
 
 	RandomImagePuller.prototype.assignImage = function($el) {
