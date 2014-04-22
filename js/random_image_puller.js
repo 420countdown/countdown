@@ -7,10 +7,15 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		this.fadeDuration = 400;
 		// this.initialize();
 		this.imageChangeDuration = 2500;
+		this.imageSources = [
+			'http://concentrate-marijuana-420.jpg.to/r?',
+			'http://420-weed.jpg.to/r?'
+		]
 	};
 
 	RandomImagePuller.prototype._getLocation = function(){
-		return 'http://420-weed.jpg.to/r?' + Math.random();
+		source = this.imageSources[Math.round(Math.random() * this.imageSources.length)];
+		return source + Math.random();
 	};
 
 	RandomImagePuller.prototype._modifyImage = function($el, loc){
