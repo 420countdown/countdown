@@ -15,7 +15,7 @@ body {
     rgba(48, 52, 42, 0.8)
     ),
   url('../img/page.png');
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 }
 
 #main-navbar {
