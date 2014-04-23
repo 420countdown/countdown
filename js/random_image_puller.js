@@ -10,7 +10,7 @@ var Countdown = this.Countdown = (this.Countdown || {});
 			'http://420-weed.jpg.to/r?'
 		]
 		this._assignHoverListenersToEls();
-		// this.initialize();
+		this.initialize();
 	};
 
 	RandomImagePuller.prototype._assignHoverListenersToEls = function() {
@@ -72,9 +72,14 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		this.assignImage($el);
 	};
 
+	RandomImagePuller.prototype.stop = function() {
+		var that = this;
+		clearInterval(that.imageInterval)
+	};
+
 	RandomImagePuller.prototype.initialize = function(){
 		var that = this;
 		this.initialPopulation();
-		window.imageInterval = setInterval(that.step.bind(that), that.imageChangeDuration);
+		this.imageInterval = setInterval(that.step.bind(that), that.imageChangeDuration);
 	};
 })(Countdown)

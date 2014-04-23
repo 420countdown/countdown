@@ -65,11 +65,12 @@ var Countdown = this.Countdown = (this.Countdown || {});
 	};
 
 	CountdownTimer.prototype.stop = function() {
-		clearInterval(window.countdownTimer);
+		var that = this;
+		clearInterval(that.countdownTimer);
 	}
 
 	CountdownTimer.prototype.initialize = function(){
 		var that = this;
-		window.countdownTimer = setInterval(that.step.bind(that), that.accuracy);
+		this.countdownTimer = setInterval(that.step.bind(that), that.accuracy);
 	};
 })(Countdown)
