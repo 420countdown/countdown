@@ -3,7 +3,7 @@ var Countdown = this.Countdown = (this.Countdown || {});
 (function(global){ // Countdown Timer
 	var CountdownTimer = global.CountdownTimer = function($element){
 		this.$element = $element;
-		this.accuracy = 1000; // milliseconds per update time
+		this.accuracy = 100; // milliseconds per update time
 		this.initialize();
 		this.seconds = 1;
 	};
