@@ -1,9 +1,8 @@
 var Countdown = this.Countdown = (this.Countdown || {});
 
 (function(global){
-	var RandomImagePuller = global.RandomImagePuller = function ($el1, $el2) {
-		this.$el1 = $el1;
-		this.$el2 = $el2;
+	var RandomImagePuller = global.RandomImagePuller = function () {
+		this.elements = [].slice.call(arguments, 0);
 		this.fadeDuration = 400;
 		// this.initialize();
 		this.imageChangeDuration = 2500;
@@ -13,8 +12,12 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		]
 	};
 
+	RandomImagePuller.prototype._random = function (array) {
+		return array[ Math.round(Math.random() * (array.length - 1)) ]
+	};
+
 	RandomImagePuller.prototype._getLocation = function(){
-		source = this.imageSources[Math.round(Math.random() * this.imageSources.length)];
+		source = this._random(this.imageSources)
 		return source + Math.random();
 	};
 
@@ -36,13 +39,14 @@ var Countdown = this.Countdown = (this.Countdown || {});
 	};
 
 	RandomImagePuller.prototype.initialPopulation = function(){
-		this.assignImage(this.$el1)
-		this.assignImage(this.$el2)
+		var that = this;
+		this.elements.forEach(function (el) {
+			that.assignImage(el);
+		})
 	};
 
 	RandomImagePuller.prototype.step = function(){
-		var elArray = [this.$el1, this.$el2];
-		var $el = elArray[Math.round(Math.random())]
+		var $el = this._random(this.elements)
 		this.assignImage($el);
 	};
 
