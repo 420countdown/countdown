@@ -73,8 +73,10 @@ body {
   color: white;
   text-align: center;
   text-shadow: black 5px 5px 8px;  /* color, vert, hor, blur */
-  font-size: 164px;
-  font-family: Oswald, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  /*font-size: 164px;*/
+  /*font-family: Oswald, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;*/
+  font-size: 135px;
+  font-family: Kranky;
   font-weight: bold;
   font-style: normal;
   text-decoration: none;
