@@ -52,8 +52,13 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		var src = this._getLocation();
 		var img = new Image();
 		img.onload = function(){ that._modifyImage($el, src) };
-		img.onerror = function(){ that.assignImage($el) };
+		img.onerror = function(){ that._waitAndAssignImage($el) };
 		img.src = src;
+	};
+
+	RandomImagePuller.prototype._waitAndAssignImage = function ($el) {
+		var that = this;
+		setTimeout(function() { that.assignImage($el) }, 10);
 	};
 
 	RandomImagePuller.prototype.initialPopulation = function(){

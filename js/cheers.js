@@ -7,16 +7,16 @@ var Countdown = this.Countdown = (this.Countdown || {});
 	};
 
 	Cheers.prototype.chooseAudioFile = function(){
-		var randNum = Math.floor(Math.random() * 25) + 1;
+		var randNum = Math.round(Math.random() * 25);
 		this.$audioFile = $("<audio src='../audio/timeout_audio" + randNum + ".mp3'>");
 	};
 
 	Cheers.prototype.toast = function(){
-		this.$audioFile[0].play
+		this.$audioFile[0].play();
 	};
 
 	Cheers.prototype._isTimedOut = function(){
-		return (this.ct.seconds == 0 ? true : false)
+		return this.ct.seconds == 0;
 	};
 
 	Cheers.prototype.initialize = function(){
