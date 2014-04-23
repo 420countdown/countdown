@@ -3,7 +3,7 @@ var Countdown = this.Countdown = (this.Countdown || {});
 (function(global){ // Countdown Timer
 	var CountdownTimer = global.CountdownTimer = function($element){
 		this.$element = $element;
-		this.accuracy = 100; // milliseconds per update time
+		this.accuracy = 1000; // milliseconds per update time
 		this.initialize();
 		this.seconds = 1;
 	};
@@ -54,7 +54,8 @@ var Countdown = this.Countdown = (this.Countdown || {});
 
 	CountdownTimer.prototype.replaceTime = function (newTime) {
 		this.$element.html(newTime);
-		this.$element.lettering();
+		// Kind of a cool effect, leave it here in case it's wanted in the future.
+		// this.$element.textEffect('jumble');
 	};
 
 	CountdownTimer.prototype.step = function(){
