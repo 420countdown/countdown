@@ -85,7 +85,7 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		$el.dblclick(function(){
 			// window.open(loc);
 			openNewBackgroundTab(loc);
-		})
+		});
 	};
 
 	RandomImagePuller.prototype._modifyImageText = function($el, text) {

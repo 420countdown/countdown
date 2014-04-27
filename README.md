@@ -4,6 +4,7 @@ A site for you to chill, or whatever, man.  You know, it's all about really taki
 
 ## TODO
 
+* Responsive design
 * Countdown days till 420, maybe day count grows as it gets closer???
 * Google feedback form
 * Toss out images that are below a certain size threshold
@@ -13,8 +14,6 @@ A site for you to chill, or whatever, man.  You know, it's all about really taki
 * Ditch background shading, get color palette
 * Smooth textbox size transitions
 * Specifically defined exclusion list for url strings
-* text background color changes?
 * jumble also changes color!  // replace self.options.jumbleColor
 	with pulling one color from array of possible colors
 * No repeated words
-* Responsive design
