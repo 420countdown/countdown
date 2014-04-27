@@ -7,4 +7,7 @@ $(document).ready(function(){
 
 	// Fixers for sizes of things
 	new Countdown.Sizer()
+
+	// Jumble the footer when the page loads
+	$('#footer').textEffect('jumble');
 })
