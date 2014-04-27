@@ -96,10 +96,6 @@ body {
   max-width: 100%;
   text-align: center;
   margin: 10%;
-  
-}
-
-.rando-image {
   border: 10px solid black;
   border-radius: 10px;
 }
