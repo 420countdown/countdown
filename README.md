@@ -17,3 +17,4 @@ A site for you to chill, or whatever, man.  You know, it's all about really taki
 * jumble also changes color!  // replace self.options.jumbleColor
 	with pulling one color from array of possible colors
 * No repeated words
+* Glow on mouseover
