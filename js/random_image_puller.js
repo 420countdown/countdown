@@ -20,7 +20,8 @@ var Countdown = this.Countdown = (this.Countdown || {});
 			'Kush',
 			'Hippie',
 			'PurpleHaze',
-			'StonerChick'
+			'StonerChick',
+			'THCFinder'
 		];
 		this._assignHoverListenersToEls();
 		this.initialize();

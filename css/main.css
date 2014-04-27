@@ -96,10 +96,9 @@ body {
 .main-content-el > p {
   /* concatenated weed url strings */
   margin: 5px 5px 20px 5px;
-  border: 1px solid #718351;
-  background: #718351;
+  background: #7DB12E;
   border-radius: 10px;
-  box-shadow: 0 0 10px 10px #718351;
+  box-shadow: 0 0 10px 10px #7DB12E;
   display: inline-block;
   transition: all 0.3s;
   /*position: absolute;*/
@@ -119,6 +118,11 @@ body {
   margin-left: 10%;
   border: 10px solid black;
   border-radius: 10px;
+  transition: all 0.6s;
+}
+
+.rando-image:hover {
+  box-shadow: 0 0 10px 5px red;
 }
 
 #random-image-1 {
