@@ -91,6 +91,12 @@ body {
   height: 100%;
 }
 
+/* innermost amazon thingy */
+#amzn_assoc_search_container_adunit0_1 {
+  border: 10px solid black;
+  border-radius: 10px;
+}
+
 .rando-image {
   max-height: 33%;
   max-width: 100%;
