@@ -7,20 +7,20 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		this.imageChangeDuration = 2500;
 		this.imageUrl = '.jpg.to';
 		this.imageKeywords = [
-			'weed',
-			'ganja',
-			'marijuana',
-			'dope',
-			'joint',
-			'blunt',
-			'maryjane',
-			'bho',
-			'concentrate',
-			'herb',
-			'kush',
-			'hippie',
-			'purple_haze',
-			'stoner_chick'
+			'Weed',
+			'Ganja',
+			'Marijuana',
+			'Dope',
+			'Joint',
+			'Blunt',
+			'Maryjane',
+			'Bho',
+			'Concentrate',
+			'Herb',
+			'Kush',
+			'Hippie',
+			'PurpleHaze',
+			'StonerChick'
 		];
 		this._assignHoverListenersToEls();
 		this.initialize();

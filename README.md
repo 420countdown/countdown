@@ -11,4 +11,9 @@ A site for you to chill, or whatever, man.  You know, it's all about really taki
 * Organize RIP, ct? (methods)
 * Texts stay at top
 * Ditch background shading, get color palette
-* Smoth textbox size transitions
+* Smooth textbox size transitions
+* Specifically defined exclusion list for url strings
+* text background color changes?
+* jumble also changes color!  // replace self.options.jumbleColor
+	with pulling one color from array of possible colors
+* No repeated words
