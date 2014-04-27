@@ -5,9 +5,22 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		this.$elements = [].slice.call(arguments, 0);
 		this.fadeDuration = 400;
 		this.imageChangeDuration = 2500;
-		this.imageSources = [
-			'http://concentrate-marijuana-420.jpg.to/r?',
-			'http://420-weed.jpg.to/r?'
+		this.imageUrl = '.jpg.to/r'
+		this.imageKeywords = [
+			'weed',
+			'ganja',
+			'marijuana',
+			'dope',
+			'joint',
+			'blunt',
+			'maryjane',
+			'bho',
+			'concentrate',
+			'herb',
+			'kush',
+			'hippie',
+			'purple_haze',
+			'stoner_chick'
 		]
 		this._assignHoverListenersToEls();
 		this.initialize();
@@ -35,8 +48,26 @@ var Countdown = this.Countdown = (this.Countdown || {});
 	};
 
 	RandomImagePuller.prototype._getLocation = function(){
-		source = this._random(this.imageSources)
-		return source + Math.random();
+		var url = 'http://' + this._assembleKeywords(this.imageKeywords) + this.imageUrl
+		console.log(url)
+		return url
+	};
+
+	// The site seems to use && operators between keywords.  So books-tv.jpg.to/r?
+	// yields only images of both books AND tv.
+	RandomImagePuller.prototype._assembleKeywords = function (keywordArray) {
+		/// give back random assembly (hyphened string) of keywords
+		// Maybe between 1 and 5 keywords?
+		var maxConsecWords = 5;
+		var minConsecWords = 2;
+		var numConsecWords = minConsecWords + Math.round(Math.random() * (maxConsecWords - minConsecWords));
+
+		var consecWords = this._random(keywordArray);
+		for( var i = 1; i < numConsecWords; ++i ){
+			consecWords = consecWords + '-' + this._random(keywordArray)
+		}
+
+		return consecWords
 	};
 
 	RandomImagePuller.prototype._modifyImage = function($el, loc){
