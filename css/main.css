@@ -89,6 +89,21 @@ body {
   width: 30%;
   margin: 10px;
   height: 100%;
+  text-align: center;
+  /*position: relative;*/
+}
+
+.main-content-el > p {
+  /* concatenated weed url strings */
+  margin: 5px 5px 20px 5px;
+  border: 1px solid #718351;
+  background: #718351;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 10px #718351;
+  display: inline-block;
+  transition: all 0.3s;
+  /*position: absolute;*/
+  /*top: 0;*/
 }
 
 /* innermost amazon thingy */
@@ -100,18 +115,16 @@ body {
 .rando-image {
   max-height: 33%;
   max-width: 100%;
-  text-align: center;
-  margin: 10%;
+  margin-right: 10%;
+  margin-left: 10%;
   border: 10px solid black;
   border-radius: 10px;
 }
 
 #random-image-1 {
-	float: right;
 }
 
 #random-image-2 {
-	float: left;
 }
 
 #amazon-div {

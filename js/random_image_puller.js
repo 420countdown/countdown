@@ -5,7 +5,7 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		this.$elements = [].slice.call(arguments, 0);
 		this.fadeDuration = 400;
 		this.imageChangeDuration = 2500;
-		this.imageUrl = '.jpg.to/r'
+		this.imageUrl = '.jpg.to';
 		this.imageKeywords = [
 			'weed',
 			'ganja',
@@ -21,7 +21,7 @@ var Countdown = this.Countdown = (this.Countdown || {});
 			'hippie',
 			'purple_haze',
 			'stoner_chick'
-		]
+		];
 		this._assignHoverListenersToEls();
 		this.initialize();
 	};
@@ -47,10 +47,12 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		return array[ Math.round(Math.random() * (array.length - 1)) ]
 	};
 
-	RandomImagePuller.prototype._getLocation = function(){
-		var url = 'http://' + this._assembleKeywords(this.imageKeywords) + this.imageUrl
-		console.log(url)
-		return url
+	// RandomImagePuller.prototype._getLocation = function(){
+	// 	return 'http://' + this._assembleKeywords(this.imageKeywords) + this.imageUrl
+	// };
+
+	RandomImagePuller.prototype._textStringToUrl = function (textString) {
+		return 'http://' + textString + this.imageUrl
 	};
 
 	// The site seems to use && operators between keywords.  So books-tv.jpg.to/r?
@@ -70,19 +72,28 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		return consecWords
 	};
 
-	RandomImagePuller.prototype._modifyImage = function($el, loc){
+	RandomImagePuller.prototype._modifyImage = function ($el, loc) {
 		var that = this;
+
 		$el.fadeOut(that.fadeDuration, function() {
 			$el.attr('src', loc);
 			$el.fadeIn();
 		});
 	};
 
+	RandomImagePuller.prototype._modifyImageText = function($el, text) {
+		$el.siblings('p').html(text);
+	};
+
 	RandomImagePuller.prototype.assignImage = function($el) {
 		var that = this;
-		var src = this._getLocation();
+		var wordString = this._assembleKeywords(this.imageKeywords);
+		var src = this._textStringToUrl(wordString);
 		var img = new Image();
-		img.onload = function(){ that._modifyImage($el, src) };
+		img.onload = function(){ 
+			that._modifyImage($el, src);
+			that._modifyImageText($el, wordString);
+		};
 		img.onerror = function(){ that._waitAndAssignImage($el) };
 		img.src = src;
 	};
@@ -105,6 +116,7 @@ var Countdown = this.Countdown = (this.Countdown || {});
 		while(!that.canChange($el)){
 			$el = that._random(that.$elements);
 		}
+
 		this.assignImage($el);
 	};
 
